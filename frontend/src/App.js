@@ -5,20 +5,20 @@ import Note from "./components/Note";
 import Footer from "./components/Footer";
 import "./components.css";
 
-function App() {
+const App = () => {
   const [addNewNote, setAddNewNote] = useState([]);
-  function addNote(note) {
+  const addNote = (note) => {
     setAddNewNote((prevNote) => {
       return [...prevNote, note];
     });
-  }
-  function deleteNote(id) {
+  };
+  const deleteNote = (id) => {
     setAddNewNote((prevNote) => {
       return prevNote.filter((noteItem, index) => {
         return index !== id;
       });
     });
-  }
+  };
   return (
     <div>
       <Header />
@@ -37,6 +37,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
