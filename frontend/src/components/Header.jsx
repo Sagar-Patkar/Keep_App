@@ -1,10 +1,13 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 const Header = () => {
   return (
     <div>
       <header>
-        <h1>Keep</h1>
+        <Container>
+          <h1>Keep</h1>
+        </Container>
       </header>
     </div>
   );

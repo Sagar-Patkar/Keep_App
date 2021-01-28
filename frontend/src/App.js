@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import Header from "./components/Header";
 import CreateNote from "./components/CreateNote";
 import Note from "./components/Note";
@@ -22,18 +23,22 @@ const App = () => {
   return (
     <div>
       <Header />
-      <CreateNote onAdd={addNote} />
-      {addNewNote.map((noteItem, index) => {
-        return (
-          <Note
-            key={index}
-            id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            onDelete={deleteNote}
-          />
-        );
-      })}
+      <main>
+        <Container>
+          <CreateNote onAdd={addNote} />
+          {addNewNote.map((noteItem, index) => {
+            return (
+              <Note
+                key={index}
+                id={index}
+                title={noteItem.title}
+                content={noteItem.content}
+                onDelete={deleteNote}
+              />
+            );
+          })}
+        </Container>
+      </main>
       <Footer />
     </div>
   );
